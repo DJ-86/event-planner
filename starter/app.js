@@ -1,13 +1,16 @@
+//Selectors
 let saveBtn = $('.saveBtn');
 let textEls = $('.description');
-console.log(textEls);
+
+// Provides the date data using moment.js
 let currentDay = moment().format('dddd, MMMM Do YYYY');
+// Targets the currentDay html element and sets it's text to the variable currentDay
 $('#currentDay').text(currentDay);
 
-// change bootstrap class depending upon time past present future//
 let currentHour = moment().format('kk');
 
-
+// for each element of saveBtn add an event listener that when hit targets the previous html tag
+// with a class of .description. The text content and the div id is then saved into local storage
 for (const element of saveBtn) {
     element.addEventListener('click', function(){
         let value = $(this).prev('.description').val();
@@ -16,6 +19,7 @@ for (const element of saveBtn) {
     });
 }
 
+// loops textEls to compare each element id is greater, less than or equal to the hour  
 function pageLogic() {
     for (const element of textEls) {
         let timeNum = Number(element.id);
@@ -26,8 +30,10 @@ function pageLogic() {
         } else {
             element.classList.add('present');
         }
+// retrieves local storage data and updates the dom
         $(element).val(localStorage.getItem(element.id))
     }
 }
 
+// loads pagelogic on page load
 $(document).ready(pageLogic);
