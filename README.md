@@ -30,8 +30,8 @@ An event planner that tracks the time and date and changes the display according
 
 ## Screenshots
 ![Screen-grab](./assets/screengrab.JPG)
-![Javascript](./assets/javaScript.JPG);
-![HTML/Bootstrap](./assets/html.JPG);
+![Javascript](./assets/javaScript.JPG)
+![HTML/Bootstrap](./assets/html.JPG)
 
 ## License
 * [MIT](LICENSE.md)
